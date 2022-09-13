@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch Bulb</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <style>
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 30%;
+      }
+    </style>
+  </head>
+  <body class="bg-dark">
+    <div class="container-fluid">
+      <div>
+        <h1
+          class="text-center my-4 bg-warning p-3 border border-dark rounded rounded-4 w-100"
+        >
+          Light Bulb
+        </h1>
+        <img id="image" class="center" src="bulb-off.png" alt="" />
+        <button
+          id="button"
+          class="center bg-primary text-light p-2 rounded rounded-3 h4 my-4"
+          onclick="change()"
+        >
+          Turn On
+        </button>
+      </div>
+      <div class="row bg-warning p-2 text-center">
+        <div class="col">
+          <h4>&copy; Copyright 2022</h4>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function change() {
+      var im = document.getElementById("image");
+      var bt = document.getElementById("button");
+      if (bt.textContent.includes("On")) {
+        im.src = "bulb-on.png";
+        bt.textContent = "Turn Off";
+      } else {
+        im.src = "bulb-off.png";
+        bt.textContent = "Turn On";
+      }
+    }
+  </script>
+</html>
